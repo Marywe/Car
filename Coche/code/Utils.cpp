@@ -30,7 +30,7 @@ b2Body* create_circle(b2World& physics_world, b2BodyType body_type, float x, flo
 }
 
 
-bool process_events(Window& window, b2World& physics_world, float window_height, float scale)
+bool process_events(Window& window, b2World& physics_world, float window_height, float scale, Car* car)
 {
     Event event;
 
@@ -55,8 +55,17 @@ bool process_events(Window& window, b2World& physics_world, float window_height,
         {
             if (Keyboard::isKeyPressed(Keyboard::A))
             {
-
+                car->Move(-1);
             }
+            else if (Keyboard::isKeyPressed(Keyboard::D))
+            {
+                car->Move(1);
+            }
+            else if (Keyboard::isKeyPressed(Keyboard::Space))
+            {
+                car->Brake();
+            }
+
             break;
         }
 

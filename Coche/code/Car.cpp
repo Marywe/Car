@@ -4,6 +4,18 @@ Car::Car(b2Vec2 _pos)
 {
     _pos = this->pos;
 }
+
+void Car::Brake() 
+{
+    chasis->SetLinearVelocity(b2Vec2_zero);
+    chasis->SetAngularVelocity(0);
+
+}
+void Car::Move(int dir) 
+{
+
+}
+
 b2Body* Car::CreateWheel(b2World& physics_world, b2BodyType body_type, float x, float y, float radius)
 {
     // Se crea el body:

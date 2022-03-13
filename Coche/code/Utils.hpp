@@ -3,6 +3,7 @@
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 #include <box2d/box2d.h>
+#include "Car.hpp"
 
 using namespace sf;
 using namespace std;
@@ -22,7 +23,7 @@ inline b2Vec2 sfml_position_to_box2d_position(const Vector2f& sfml_position, flo
     return b2Vec2(sfml_position.x / scale, (window_height - sfml_position.y) / scale);
 }
 
-bool process_events(Window& window, b2World& physics_world, float window_height, float scale);
+bool process_events(Window& window, b2World& physics_world, float window_height, float scale, Car * car = nullptr);
 
 b2Body* create_circle(b2World& physics_world, b2BodyType body_type, float x, float y, float radius);
 

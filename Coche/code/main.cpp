@@ -14,8 +14,8 @@ using namespace std;
 int main ()
 {
     //Se crea la ventana y el mundo
-    constexpr auto window_width  = 800u;
-    constexpr auto window_height = 600u;
+    constexpr auto window_width  = 1200u;
+    constexpr auto window_height = 800u;
 
     RenderWindow window(VideoMode(window_width, window_height), "Box2D Joints", 
                                   Style::Titlebar | Style::Close, ContextSettings(32));
@@ -25,8 +25,8 @@ int main ()
 
     //Edges del mundo
     constexpr float left   = 0.01f;
-    constexpr float right  = 8.00f;
-    constexpr float top    = 6.00f;
+    constexpr float right  = 12.00f;
+    constexpr float top    = 8.00f;
     constexpr float bottom = 0.01f;
 
     create_edge (physics_world, b2_staticBody, left,  bottom, right, bottom);
@@ -46,12 +46,10 @@ int main ()
     car.Wheels[1] = car.CreateWheel(physics_world, b2_dynamicBody, 0.5f, 1, .3f);
 
     auto* jointA = create_revolute_joint(physics_world, chasis, car.Wheels[0], b2Vec2(-0.5f, -0.25), true);
-    jointA->SetMaxMotorTorque(75.f);
-    jointA->SetMotorSpeed(-1.f);
+    //jointA->SetMaxMotorTorque(75.f);
 
     auto* jointB = create_revolute_joint(physics_world, chasis, car.Wheels[1], b2Vec2(0.5f, -0.25), true);
-    jointB->SetMaxMotorTorque(75.f);
-    jointB->SetMotorSpeed(-1.f);
+    //jointB->SetMaxMotorTorque(75.f);
 
 
     const float physics_to_graphics_scale = 100.f;      // Escala para pasar de unidades de física a unidades de gráficos
@@ -72,7 +70,7 @@ int main ()
 
         // Process window events:
 
-        exit = process_events (window, physics_world, window_height, physics_to_graphics_scale);
+        exit = process_events (window, physics_world, window_height, physics_to_graphics_scale, &car);
 
         // Update:
 
