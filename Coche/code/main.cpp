@@ -2,8 +2,6 @@
 // 2022
 
 
-#include <ciso646>
-#include <memory>
 #include <vector>
 #include "Car.hpp"
 #include "Utils.hpp"
@@ -92,7 +90,7 @@ int main ()
         // Se restablece la estimación de la duración del siguiente fotograma:
         delta_time = timer.getElapsedTime ().asSeconds ();
     }
-    while (not exit);
+    while (!exit);
 
     return 0;
 }
