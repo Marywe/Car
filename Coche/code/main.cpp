@@ -17,7 +17,7 @@ int main ()
     constexpr auto window_width  = 1200u;
     constexpr auto window_height = 800u;
 
-    RenderWindow window(VideoMode(window_width, window_height), "Box2D Joints", 
+    RenderWindow window(VideoMode(window_width, window_height), "Car", 
                                   Style::Titlebar | Style::Close, ContextSettings(32));
     window.setVerticalSyncEnabled (true);
 
@@ -41,21 +41,20 @@ int main ()
     carPos.y = 1;
     Car car(carPos);
 
-    auto* chasis = car.CreateCar(physics_world, b2_dynamicBody, carPos.x, carPos.y, 1, 0.1f);
+    car.chasis = car.CreateCar(physics_world, b2_dynamicBody, carPos.x, carPos.y, 1, 0.1f);
     car.Wheels[0] = car.CreateWheel(physics_world, b2_dynamicBody, 1.5f, 1, .3f);
     car.Wheels[1] = car.CreateWheel(physics_world, b2_dynamicBody, 0.5f, 1, .3f);
 
-    auto* jointA = create_revolute_joint(physics_world, chasis, car.Wheels[0], b2Vec2(-0.5f, -0.25), true);
+    car.joints[0] =  create_revolute_joint(physics_world, car.chasis, car.Wheels[0], b2Vec2(-0.5f, -0.25), true);
     //jointA->SetMaxMotorTorque(75.f);
 
-    auto* jointB = create_revolute_joint(physics_world, chasis, car.Wheels[1], b2Vec2(0.5f, -0.25), true);
+    car.joints[1] = create_revolute_joint(physics_world, car.chasis, car.Wheels[1], b2Vec2(0.5f, -0.25), true);
     //jointB->SetMaxMotorTorque(75.f);
 
 
     const float physics_to_graphics_scale = 100.f;      // Escala para pasar de unidades de física a unidades de gráficos
 
-    // Se ejecuta el bucle principal de la animación:
-    
+    // Se ejecuta el bucle principal de la animación:    
     const float target_fps  = 60.f;                     // Cuántos fotogramas por segundo se busca conseguir
     const float target_time = 1.f / target_fps;         // Duración en segundos de un fotograma a la tasa deseada
 
@@ -66,18 +65,18 @@ int main ()
 
     do
     {
+        car.joints[0]->SetMotorSpeed(5);
+        car.joints[1]->SetMotorSpeed(5);
+        car.Move(1);
         timer.restart ();
 
         // Process window events:
-
         exit = process_events (window, physics_world, window_height, physics_to_graphics_scale, &car);
 
         // Update:
-
         physics_world.Step (delta_time, 8, 4);
 
         // Render:
-
         window.clear ();
 
         render (physics_world, window, physics_to_graphics_scale);
@@ -86,7 +85,6 @@ int main ()
 
         // Si resulta necesario se detiene la ejecución unos instantes para no exceder la tasa de
         // fotogramas por segundo deseada:
-
         float elapsed = timer.getElapsedTime ().asSeconds ();
 
         if (elapsed < target_time)
@@ -95,7 +93,6 @@ int main ()
         }
 
         // Se restablece la estimación de la duración del siguiente fotograma:
-
         delta_time = timer.getElapsedTime ().asSeconds ();
     }
     while (not exit);

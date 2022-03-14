@@ -13,7 +13,7 @@ void Car::Brake()
 }
 void Car::Move(int dir) 
 {
-    
+
 }
 
 b2Body* Car::CreateWheel(b2World& physics_world, b2BodyType body_type, float x, float y, float radius)

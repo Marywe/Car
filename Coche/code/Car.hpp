@@ -6,15 +6,16 @@ class Car
 {
 private:
 
-    b2Vec2 pos;
-    b2Body* chasis = nullptr;
+    b2Vec2 pos;   
 
 public:
 
     Car(b2Vec2 pos);
 
-    b2Body* Wheels[2];
+    b2Body* chasis;
 
+    b2RevoluteJoint* joints[2];
+    b2Body* Wheels[2];
 
     b2Body* CreateWheel(b2World& physics_world, b2BodyType body_type, float x, float y, float radius);
 
