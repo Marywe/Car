@@ -9,15 +9,13 @@ void Car::Brake()
 {
     joints[0]->SetMotorSpeed(0);
     joints[1]->SetMotorSpeed(0);
-    chasis->SetLinearVelocity(b2Vec2_zero);
-    chasis->SetAngularVelocity(0);
 }
 
 void Car::Move(int dir) 
 {
-    chasis->SetLinearVelocity(b2Vec2(3*dir,0));
-    joints[0]->SetMotorSpeed(500*dir);
-    joints[1]->SetMotorSpeed(500*dir);
+    joints[0]->SetMotorSpeed(100*dir);
+    joints[1]->SetMotorSpeed(100*dir);
+    
 }
 
 b2Body* Car::CreateWheel(b2World& physics_world, b2BodyType body_type, float x, float y, float radius)
@@ -49,7 +47,7 @@ b2Body* Car::CreateWheel(b2World& physics_world, b2BodyType body_type, float x, 
     return body;
 }
 
-b2Body* Car::CreateCar(b2World& physics_world, b2BodyType body_type, float x, float y, float width, float height)
+b2Body* Car::CreateChasis(b2World& physics_world, b2BodyType body_type, float x, float y, float width, float height)
 {
     // Se crea el body:
 

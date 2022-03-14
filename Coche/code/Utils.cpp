@@ -1,34 +1,5 @@
 #include "Utils.hpp"
 
-b2Body* create_circle(b2World& physics_world, b2BodyType body_type, float x, float y, float radius)
-{
-    // Se crea el body:
-
-    b2BodyDef body_definition;
-
-    body_definition.type = body_type;
-    body_definition.position.Set(x, y);                            // Posición inicial absoluta
-
-    b2Body* body = physics_world.CreateBody(&body_definition);
-
-    // Se añande una fixture:
-
-    b2CircleShape body_shape;
-
-    body_shape.m_radius = radius;
-
-    b2FixtureDef body_fixture;
-
-    body_fixture.shape = &body_shape;
-    body_fixture.density = 0.10f;
-    body_fixture.restitution = 0.75f;
-    body_fixture.friction = 0.50f;
-
-    body->CreateFixture(&body_fixture);
-
-    return body;
-}
-
 
 bool process_events(Window& window, b2World& physics_world, float window_height, float scale, Car* car)
 {
@@ -55,13 +26,13 @@ bool process_events(Window& window, b2World& physics_world, float window_height,
         {
             if (Keyboard::isKeyPressed(Keyboard::A))
             {
-                car->Move(-1);
-            }
-            else if (Keyboard::isKeyPressed(Keyboard::D))
-            {
                 car->Move(1);
             }
-            else if (Keyboard::isKeyPressed(Keyboard::Space))
+            if (Keyboard::isKeyPressed(Keyboard::D))
+            {
+                car->Move(-1);
+            }
+            if (Keyboard::isKeyPressed(Keyboard::Space) || (!Keyboard::isKeyPressed(Keyboard::A) && !Keyboard::isKeyPressed(Keyboard::D)))
             {
                 car->Brake();
             }
@@ -109,7 +80,34 @@ b2Body* create_box(b2World& physics_world, b2BodyType body_type, float x, float 
     return body;
 }
 
-// ------------------------------------------------------------------------------------------ //
+b2Body* create_circle(b2World& physics_world, b2BodyType body_type, float x, float y, float radius)
+{
+    // Se crea el body:
+
+    b2BodyDef body_definition;
+
+    body_definition.type = body_type;
+    body_definition.position.Set(x, y);                            // Posición inicial absoluta
+
+    b2Body* body = physics_world.CreateBody(&body_definition);
+
+    // Se añande una fixture:
+
+    b2CircleShape body_shape;
+
+    body_shape.m_radius = radius;
+
+    b2FixtureDef body_fixture;
+
+    body_fixture.shape = &body_shape;
+    body_fixture.density = 0.10f;
+    body_fixture.restitution = 0.75f;
+    body_fixture.friction = 0.50f;
+
+    body->CreateFixture(&body_fixture);
+
+    return body;
+}
 
 b2Body* create_edge(b2World& physics_world, b2BodyType body_type, float x0, float y0, float x1, float y1)
 {
@@ -125,6 +123,7 @@ b2Body* create_edge(b2World& physics_world, b2BodyType body_type, float x0, floa
     // Se añande una fixture:
 
     b2EdgeShape body_shape;
+    
 
     body_shape.SetTwoSided(b2Vec2(x0, y0), b2Vec2(x1, y1));        // Coordenadas locales respecto al centro del body
 
@@ -132,12 +131,11 @@ b2Body* create_edge(b2World& physics_world, b2BodyType body_type, float x0, floa
 
     body_fixture.shape = &body_shape;
 
+
     body->CreateFixture(&body_fixture);
 
     return body;
 }
-
-// ------------------------------------------------------------------------------------------ //
 
 b2RevoluteJoint* create_revolute_joint(b2World& physics_world, b2Body* body_a, b2Body* body_b, b2Vec2 offset, bool enable_motor)
 {
@@ -175,8 +173,6 @@ void render_circle
     renderer.draw(shape);
 }
 
-// ------------------------------------------------------------------------------------------ //
-
 void render_segment
 (
     const Vector2f& start,
@@ -193,8 +189,6 @@ void render_segment
 
     renderer.draw(line, 2, Lines);
 }
-
-// ------------------------------------------------------------------------------------------ //
 
 void render_segment
 (
@@ -217,8 +211,6 @@ void render_segment
         renderer
     );
 }
-
-// ------------------------------------------------------------------------------------------ //
 
 void render_polygon
 (
@@ -246,8 +238,6 @@ void render_polygon
 
     renderer.draw(sfml_polygon);
 }
-
-// ------------------------------------------------------------------------------------------ //
 
 void render(b2World& physics_world, RenderWindow& renderer, float scale)
 {

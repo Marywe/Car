@@ -19,7 +19,7 @@ public:
 
     b2Body* CreateWheel(b2World& physics_world, b2BodyType body_type, float x, float y, float radius);
 
-    b2Body* CreateCar(b2World& physics_world, b2BodyType body_type, float x, float y, float width, float height);
+    b2Body* CreateChasis(b2World& physics_world, b2BodyType body_type, float x, float y, float width, float height);
 
     void Brake();
 

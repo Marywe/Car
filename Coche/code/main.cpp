@@ -39,15 +39,14 @@ int main ()
     carPos.y = 1;
     Car car(carPos);
 
-    car.chasis = car.CreateCar(physics_world, b2_dynamicBody, carPos.x, carPos.y, 1, 0.1f);
-    car.Wheels[0] = car.CreateWheel(physics_world, b2_dynamicBody, 1.5f, 1, .3f);
-    car.Wheels[1] = car.CreateWheel(physics_world, b2_dynamicBody, 0.5f, 1, .3f);
+    car.chasis = car.CreateChasis(physics_world, b2_dynamicBody, carPos.x, carPos.y, 0.5f, 0.1f);
+    car.Wheels[0] = car.CreateWheel(physics_world, b2_dynamicBody, 0.1f, 1, 0.1f);
+    car.Wheels[1] = car.CreateWheel(physics_world, b2_dynamicBody, 0.4, 1, 0.1f);
 
-    car.joints[0] =  create_revolute_joint(physics_world, car.chasis, car.Wheels[0], b2Vec2(-0.5f, -0.25), true);
-    //jointA->SetMaxMotorTorque(75.f);
-
-    car.joints[1] = create_revolute_joint(physics_world, car.chasis, car.Wheels[1], b2Vec2(0.5f, -0.25), true);
-    //jointB->SetMaxMotorTorque(75.f);
+    car.joints[0] = create_revolute_joint(physics_world, car.chasis, car.Wheels[0], b2Vec2(-0.5f, -0.1), true);
+    car.joints[1] = create_revolute_joint(physics_world, car.chasis, car.Wheels[1], b2Vec2(0.5f, -0.1), true);
+    car.joints[0]->SetMaxMotorTorque(1.f);
+    car.joints[1]->SetMaxMotorTorque(1);
 
 
     const float physics_to_graphics_scale = 100.f;      // Escala para pasar de unidades de física a unidades de gráficos
