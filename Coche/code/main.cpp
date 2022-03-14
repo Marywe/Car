@@ -5,6 +5,7 @@
 #include <vector>
 #include "Car.hpp"
 #include "Utils.hpp"
+#include "Terrain.hpp"
 
 using namespace sf;
 using namespace std;
@@ -47,6 +48,19 @@ int main ()
     car.joints[1] = create_revolute_joint(physics_world, car.chasis, car.Wheels[1], b2Vec2(0.5f, -0.1), true);
     car.joints[0]->SetMaxMotorTorque(1.f);
     car.joints[1]->SetMaxMotorTorque(1);
+
+
+
+
+    //Terreno
+
+    
+    Terrain* terrain = new Terrain();
+    terrain->turret = new Turret();
+    terrain->turret->circle = create_circle(physics_world, b2_staticBody, 3, 2.4f, 0.2f);
+    terrain->turret->CreateBase(physics_world, b2_staticBody, 3, 2, .2f, .5f);
+    //terrain->turret->joint = create_revolute_joint(physics_world, terrain->turret->circle, car.Wheels[0], b2Vec2(-0.5f, -0.1), true);
+
 
 
     const float physics_to_graphics_scale = 100.f;      // Escala para pasar de unidades de física a unidades de gráficos
@@ -93,3 +107,4 @@ int main ()
 
     return 0;
 }
+

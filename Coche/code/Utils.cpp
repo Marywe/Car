@@ -9,18 +9,7 @@ bool process_events(Window& window, b2World& physics_world, float window_height,
     {
         switch (event.type)
         {
-        case Event::MouseButtonPressed:
-        {
-            b2Vec2 center = sfml_position_to_box2d_position
-            (
-                { float(event.mouseButton.x), float(event.mouseButton.y) }, window_height, scale
-            );
-
-            create_circle(physics_world, b2_dynamicBody, center.x, center.y, .5f);
-
-            break;
-        }
-
+        
         //Input de movimiento
         case Event::KeyPressed:
         {
@@ -46,6 +35,7 @@ bool process_events(Window& window, b2World& physics_world, float window_height,
             }
             break;
         }
+
         case Event::Closed:
         {
             return true;
@@ -118,7 +108,6 @@ b2Body* create_circle(b2World& physics_world, b2BodyType body_type, float x, flo
 b2Body* create_edge(b2World& physics_world, b2BodyType body_type, float x0, float y0, float x1, float y1)
 {
     // Se crea el body:
-
     b2BodyDef body_definition;
 
     body_definition.type = body_type;
@@ -132,15 +121,39 @@ b2Body* create_edge(b2World& physics_world, b2BodyType body_type, float x0, floa
     
 
     body_shape.SetTwoSided(b2Vec2(x0, y0), b2Vec2(x1, y1));        // Coordenadas locales respecto al centro del body
-
+ 
     b2FixtureDef body_fixture;
 
     body_fixture.shape = &body_shape;
-
+   
 
     body->CreateFixture(&body_fixture);
 
     return body;
+}
+
+b2Body* create_curve(b2World& physics_world, b2BodyType body_type, float x0, float y0, float x1, float y1)
+{
+    b2BodyDef bd;
+    bd.position.Set(x0, y0);
+
+    b2Body* m_body = physics_world.CreateBody(&bd);
+
+    b2EdgeShape shape;
+
+    b2Vec2 p1, p2;
+
+    int m_nBorderVertices = 30;
+
+   /* for (int i = 0; i < m_nBorderVertices - 1; i++) {
+        p1 = b2Vec2(((m_borderVertices[i].x - winSize.width / 2) / PTM_RATIO), ((m_borderVertices[i].y - winSize.height / 2) / PTM_RATIO));
+        p2 = b2Vec2(((m_borderVertices[i + 1].x - winSize.width / 2) / PTM_RATIO), ((m_borderVertices[i + 1].y - winSize.height / 2) / PTM_RATIO));
+        shape.Set(p1, p2);
+        
+        m_body->CreateFixture(&shape, 0);
+    }*/
+
+    return m_body;
 }
 
 b2RevoluteJoint* create_revolute_joint(b2World& physics_world, b2Body* body_a, b2Body* body_b, b2Vec2 offset, bool enable_motor)
