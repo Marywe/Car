@@ -39,7 +39,13 @@ bool process_events(Window& window, b2World& physics_world, float window_height,
 
             break;
         }
-
+        case Event::KeyReleased:
+        {
+            if (event.key.code == Keyboard::A || event.key.code == Keyboard::D) {
+                car->Brake();
+            }
+            break;
+        }
         case Event::Closed:
         {
             return true;
