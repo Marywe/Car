@@ -9,11 +9,12 @@ void Car::Brake()
 {
     chasis->SetLinearVelocity(b2Vec2_zero);
     chasis->SetAngularVelocity(0);
-
 }
+
 void Car::Move(int dir) 
 {
-
+    joints[0]->SetMotorSpeed(5*dir);
+    joints[1]->SetMotorSpeed(5*dir);
 }
 
 b2Body* Car::CreateWheel(b2World& physics_world, b2BodyType body_type, float x, float y, float radius)

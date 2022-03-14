@@ -65,9 +65,6 @@ int main ()
 
     do
     {
-        car.joints[0]->SetMotorSpeed(5);
-        car.joints[1]->SetMotorSpeed(5);
-        car.Move(1);
         timer.restart ();
 
         // Process window events:
