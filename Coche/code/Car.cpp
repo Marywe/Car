@@ -2,7 +2,8 @@
 
 Car::Car(b2Vec2 _pos)
 {
-    _pos = this->pos;
+    this->pos = _pos;
+    this->initialPos = _pos;
 }
 
 void Car::Brake() 
@@ -74,4 +75,11 @@ b2Body* Car::CreateChasis(b2World& physics_world, b2BodyType body_type, float x,
     body->CreateFixture(&body_fixture);
 
     return body;
+}
+
+void Car::Reset()
+{
+    pos = initialPos;
+    Brake();
+    chasis->SetTransform(initialPos, 0);
 }

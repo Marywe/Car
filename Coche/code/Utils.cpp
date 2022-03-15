@@ -26,6 +26,12 @@ bool process_events(Window& window, b2World& physics_world, float window_height,
                 car->Brake();
             }
 
+
+            if (Keyboard::isKeyPressed(Keyboard::R))
+            {
+                car->Reset();
+            }
+
             break;
         }
         case Event::KeyReleased:
@@ -84,6 +90,7 @@ b2Body* create_circle(b2World& physics_world, b2BodyType body_type, float x, flo
 
     body_definition.type = body_type;
     body_definition.position.Set(x, y);                            // Posición inicial absoluta
+   
 
     b2Body* body = physics_world.CreateBody(&body_definition);
 
