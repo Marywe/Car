@@ -58,6 +58,7 @@ void Terrain::CreateTerrain(b2World& physics_world)
     sensorPlat = new SensorPlat();
     sensorPlat->SetPos(b2Vec2(8, 0));
     sensorPlat->CreateBase(physics_world, b2_kinematicBody, sensorPlat->GetPos().x, sensorPlat->GetPos().y, 2, .5f);
+    sensorPlat->GetBase()->GetFixtureList()->GetBody()->GetUserData().pointer = 3;
 }
 
 

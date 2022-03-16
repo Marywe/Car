@@ -57,6 +57,8 @@ class SensorPlat
 
 public:
 
+    const string data = "SENSOR";
+
     void CreateBase(b2World& physics_world, b2BodyType body_type, float x, float y, float width, float height);
 
     inline b2Body* GetBase() { return base; }

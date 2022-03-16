@@ -44,8 +44,9 @@ int main ()
     car.joints[1]->SetMaxMotorTorque(1);
 
 
-
+    //Set del contact listener para que se ajuste al mío propio
     MyContactLister* myContactList = new MyContactLister(&car, terrain->sensorPlat);
+    physics_world.SetContactListener(myContactList);
 
 
     const float physics_to_graphics_scale = 100.f;      // Escala para pasar de unidades de física a unidades de gráficos
@@ -61,6 +62,7 @@ int main ()
 
     do
     {
+        
         timer.restart ();
 
         // Process window events:

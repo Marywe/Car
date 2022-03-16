@@ -11,6 +11,8 @@ private:
 
 public:
 
+    const string data = "CAR";
+
     Car(b2Vec2 pos);
 
     b2Body* chasis;
