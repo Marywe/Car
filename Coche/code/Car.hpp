@@ -11,7 +11,7 @@ private:
 
 public:
 
-    const string data = "CAR";
+    //const std::string data = "CAR";
 
     Car(b2Vec2 pos);
 
