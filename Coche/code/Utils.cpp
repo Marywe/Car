@@ -1,6 +1,10 @@
 #include "Utils.hpp"
 
-
+/**
+*Función donde se procesan todos los eventos de input y de ventana. Comprueba el input del coche para llamarlo y hacer que se mueva / frene,
+* controla el input del Reset (pulsar a la R) para volver a empezar con el coche, y por último, cierra el bucle de llamada
+* cuando el programa se cierra.
+*/
 bool process_events(Window& window, b2World& physics_world, float window_height, float scale, Car* car)
 {
     Event event;
@@ -76,7 +80,7 @@ b2Body* create_box(b2World& physics_world, b2BodyType body_type, float x, float 
     body_fixture.density = 1.00f;
     body_fixture.restitution = 0.50f;
     body_fixture.friction = 0.50f;
-
+   
     body->CreateFixture(&body_fixture);
 
     return body;
@@ -84,6 +88,7 @@ b2Body* create_box(b2World& physics_world, b2BodyType body_type, float x, float 
 
 b2Body* create_circle(b2World& physics_world, b2BodyType body_type, float x, float y, float radius)
 {
+    
     // Se crea el body:
 
     b2BodyDef body_definition;

@@ -6,6 +6,7 @@
 #include "Car.hpp"
 #include "Utils.hpp"
 #include "Terrain.hpp"
+#include "MyContactListener.hpp"
 
 using namespace sf;
 using namespace std;
@@ -41,6 +42,11 @@ int main ()
     car.joints[1] = create_revolute_joint(physics_world, car.chasis, car.Wheels[1], b2Vec2(0.5f, -0.1), true);
     car.joints[0]->SetMaxMotorTorque(1.f);
     car.joints[1]->SetMaxMotorTorque(1);
+
+
+
+    MyContactLister* myContactList = new MyContactLister(&car, terrain->sensorPlat);
+
 
     const float physics_to_graphics_scale = 100.f;      // Escala para pasar de unidades de física a unidades de gráficos
 

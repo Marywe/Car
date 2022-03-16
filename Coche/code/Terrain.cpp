@@ -2,10 +2,10 @@
 
 b2Body* Turret::CreateBase(b2World& physics_world, b2BodyType body_type, float x, float y, float width, float height)
 {
+  
 	this->base = create_box(physics_world, body_type, x, y, width, height);
 	return base;
 	
-
 }
 
 void Turret::CreateV(b2World& physics_world, b2BodyType body_type, float x, float y, float width, float height)
@@ -22,6 +22,13 @@ void Platform::CreateFloor(b2World& physics_world, b2BodyType body_type, float x
 {
 	this->floor = create_box(physics_world, body_type, x, y, width, height);
 }
+void SensorPlat::CreateBase(b2World& physics_world, b2BodyType body_type, float x, float y, float width, float height)
+{
+    this->base = create_box(physics_world, body_type, x, y, width, height);
+
+}
+
+
 
 void Terrain::CreateTerrain(b2World& physics_world)
 {
@@ -48,6 +55,9 @@ void Terrain::CreateTerrain(b2World& physics_world)
     platform->CreateFloor(physics_world, b2_kinematicBody, platform->GetPos().x, platform->GetPos().y + 0.5f, 1, 0.05f);
     platform->CreateBase(physics_world, b2_kinematicBody, platform->GetPos().x, platform->GetPos().y, .05f, .5f);
 
+    sensorPlat = new SensorPlat();
+    sensorPlat->SetPos(b2Vec2(8, 0));
+    sensorPlat->CreateBase(physics_world, b2_kinematicBody, sensorPlat->GetPos().x, sensorPlat->GetPos().y, 2, .5f);
 }
 
 

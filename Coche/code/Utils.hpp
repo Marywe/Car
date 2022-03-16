@@ -45,6 +45,3 @@ void render(b2World& physics_world, RenderWindow& renderer, float scale);
 
 b2Body* create_curve(b2World& physics_world, b2BodyType body_type, float x0, float y0, float x1, float y1);
 
-
-
-
