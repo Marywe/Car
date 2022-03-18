@@ -89,12 +89,14 @@
     <ClCompile Include="..\..\code\Car.cpp" />
     <ClCompile Include="..\..\code\main.cpp" />
     <ClCompile Include="..\..\code\MyContactListener.cpp" />
+    <ClCompile Include="..\..\code\Scene.cpp" />
     <ClCompile Include="..\..\code\Terrain.cpp" />
     <ClCompile Include="..\..\code\Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\code\Car.hpp" />
     <ClInclude Include="..\..\code\MyContactListener.hpp" />
+    <ClInclude Include="..\..\code\Scene.hpp" />
     <ClInclude Include="..\..\code\Terrain.hpp" />
     <ClInclude Include="..\..\code\Utils.hpp" />
   </ItemGroup>

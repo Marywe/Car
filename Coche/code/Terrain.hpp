@@ -15,7 +15,8 @@ class Turret
 public:
       
     b2RevoluteJoint* joint;
-    b2Body* V[2];
+    b2RevoluteJoint* joint2;
+    b2Body* V;
     b2Body* circle;
 
     b2Body* CreateBase(b2World& physics_world, b2BodyType body_type, float x, float y, float width, float height);
@@ -24,6 +25,8 @@ public:
     inline b2Vec2 GetPos() { return pos; }
     inline b2Body* GetBase() { return base; }
     inline void SetPos(b2Vec2 _pos) { pos = _pos; }
+
+    void ActivateTurret();
 
 };
 
