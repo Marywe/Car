@@ -2,6 +2,10 @@
 
 #include "Utils.hpp"
 
+/**
+* Clase donde se define la torreta que contiene un joint y se mueve cuando el player se queda encima de una plataforma.
+* Al activarse el joint y moverse hacia abajo, la plataforma que tiene encima cae y deja caer pelotas encima del coche.
+*/
 class Turret 
 {
     const char data[4] = { 't', 'u', 'r', 'r' };
@@ -23,6 +27,12 @@ public:
 
 };
 
+
+/**
+* Esta clase es la que lleva el objeto plataforma del circuito (la que sube). Una vez haya llegado al sesor de las pelotas,
+* esta plataforma subirá un poquito hasta la altura del suelo, y cuando el coche esté encima, subirá hasta la plataforma volante 
+* donde se encuentra la meta
+*/
 class Platform
 {
     b2Body* base;
@@ -45,6 +55,8 @@ public:
     inline b2Body* GetFloor() { return floor; }
     inline b2Vec2 GetPos() { return pos; }
     inline void SetPos(b2Vec2 _pos) { pos = _pos; }
+    inline bool GetDown() { return isDown; }
+    inline void SetDown(bool d) { isDown = d; }
 
     void Move();
 
@@ -54,6 +66,7 @@ class SensorPlat
 {
     b2Body* base;
     b2Vec2 pos;
+    bool activated = false;
 
 public:
 
@@ -65,7 +78,7 @@ public:
 
     inline b2Vec2 GetPos() { return pos; }
     inline void SetPos(b2Vec2 _pos) { pos = _pos; }
-
+    inline bool GetActivated() { return activated; }
 
 };
 
@@ -83,4 +96,5 @@ public:
 * Para ello se tiene en cuenta la resolución de la ventana que hemos creado anteriormente.
 */
     void CreateTerrain(b2World& physics_world);
+    void Update();
 };

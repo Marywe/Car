@@ -28,7 +28,9 @@ void SensorPlat::CreateBase(b2World& physics_world, b2BodyType body_type, float 
 
 }
 
+void Platform::Move() {
 
+}
 
 void Terrain::CreateTerrain(b2World& physics_world)
 {
@@ -56,9 +58,26 @@ void Terrain::CreateTerrain(b2World& physics_world)
     platform->CreateBase(physics_world, b2_kinematicBody, platform->GetPos().x, platform->GetPos().y, .05f, .5f);
 
     sensorPlat = new SensorPlat();
-    sensorPlat->SetPos(b2Vec2(8, 0));
+    sensorPlat->SetPos(b2Vec2(8,1));
     sensorPlat->CreateBase(physics_world, b2_kinematicBody, sensorPlat->GetPos().x, sensorPlat->GetPos().y, 2, .5f);
     sensorPlat->GetBase()->GetFixtureList()->GetBody()->GetUserData().pointer = 3;
+}
+
+void Terrain::Update() 
+{    
+
+    if (sensorPlat->GetActivated())
+    {
+        platform->SetDown(false);
+    }
+
+    if (!platform->GetDown())
+    {
+        platform->Move();
+    }
+
+
+
 }
 
 
