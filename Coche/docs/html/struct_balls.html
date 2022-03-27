@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Car: Referencia de la Clase Scene</title>
+<title>Car: Referencia de la Estructura Balls</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -64,35 +64,40 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Métodos públicos</a> &#124;
-<a href="class_scene-members.html">Lista de todos los miembros</a>  </div>
-  <div class="headertitle"><div class="title">Referencia de la Clase Scene</div></div>
+<a href="#pub-attribs">Atributos públicos</a> &#124;
+<a href="struct_balls-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle"><div class="title">Referencia de la Estructura Balls</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Clase escena. La encapsulación más globa de un programa o juego. Aquí ocurre el management de todo el programa.  
- <a href="class_scene.html#details">Más...</a></p>
+<p>Pequeña estructura para guardar las pelotas.  
+ <a href="struct_balls.html#details">Más...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_scene_8hpp_source.html">Scene.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="_terrain_8hpp_source.html">Terrain.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Métodos públicos</h2></td></tr>
-<tr class="memitem:a31e0e1b9ce39bd9f5ec160835cc94d44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a31e0e1b9ce39bd9f5ec160835cc94d44">Start</a> ()</td></tr>
-<tr class="memdesc:a31e0e1b9ce39bd9f5ec160835cc94d44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función que inicializa la única escena que tenemos. Se asignan los valores de inicio, se crea la ventana y los elementos del propio juego.  <a href="class_scene.html#a31e0e1b9ce39bd9f5ec160835cc94d44">Más...</a><br /></td></tr>
-<tr class="separator:a31e0e1b9ce39bd9f5ec160835cc94d44"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71a71b4f7752b853ff8032b0941a9d8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a71a71b4f7752b853ff8032b0941a9d8d">Update</a> ()</td></tr>
-<tr class="separator:a71a71b4f7752b853ff8032b0941a9d8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3779630d3c73d7dda90e2d19ae42ff3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_balls.html#ae3779630d3c73d7dda90e2d19ae42ff3">CreateBalls</a> ()</td></tr>
+<tr class="separator:ae3779630d3c73d7dda90e2d19ae42ff3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Atributos públicos</h2></td></tr>
+<tr class="memitem:a0bdcd98b50e8730900f77194b0ab171a"><td class="memItemLeft" align="right" valign="top">b2Body *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_balls.html#a0bdcd98b50e8730900f77194b0ab171a">balls</a> [5]</td></tr>
+<tr class="separator:a0bdcd98b50e8730900f77194b0ab171a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3e7df0b4aafcb25b2d1731fe3847a7f"><td class="memItemLeft" align="right" valign="top">b2Vec2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_balls.html#af3e7df0b4aafcb25b2d1731fe3847a7f">pos</a></td></tr>
+<tr class="separator:af3e7df0b4aafcb25b2d1731fe3847a7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
-<div class="textblock"><p >Clase escena. La encapsulación más globa de un programa o juego. Aquí ocurre el management de todo el programa. </p>
+<div class="textblock"><p >Pequeña estructura para guardar las pelotas. </p>
 </div><h2 class="groupheader">Documentación de las funciones miembro</h2>
-<a id="a31e0e1b9ce39bd9f5ec160835cc94d44" name="a31e0e1b9ce39bd9f5ec160835cc94d44"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a31e0e1b9ce39bd9f5ec160835cc94d44">&#9670;&nbsp;</a></span>Start()</h2>
+<a id="ae3779630d3c73d7dda90e2d19ae42ff3" name="ae3779630d3c73d7dda90e2d19ae42ff3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3779630d3c73d7dda90e2d19ae42ff3">&#9670;&nbsp;</a></span>CreateBalls()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Scene::Start </td>
+          <td class="memname">void Balls::CreateBalls </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -100,31 +105,39 @@ Métodos públicos</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Función que inicializa la única escena que tenemos. Se asignan los valores de inicio, se crea la ventana y los elementos del propio juego. </p>
-
 </div>
 </div>
-<a id="a71a71b4f7752b853ff8032b0941a9d8d" name="a71a71b4f7752b853ff8032b0941a9d8d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a71a71b4f7752b853ff8032b0941a9d8d">&#9670;&nbsp;</a></span>Update()</h2>
+<h2 class="groupheader">Documentación de los datos miembro</h2>
+<a id="a0bdcd98b50e8730900f77194b0ab171a" name="a0bdcd98b50e8730900f77194b0ab171a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bdcd98b50e8730900f77194b0ab171a">&#9670;&nbsp;</a></span>balls</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Scene::Update </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">b2Body* Balls::balls[5]</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Función que principalmente consiste en un do while que iterará sobre sí mismo cada frame. En este update se cuentan frames, se actualizan los eventos de Input, el render y se controla el flujo del juego. </p>
 
 </div>
 </div>
-<hr/>La documentación para esta clase fue generada a partir de los siguientes ficheros:<ul>
-<li>C:/PROYECTOS/Car/Coche/code/<a class="el" href="_scene_8hpp_source.html">Scene.hpp</a></li>
-<li>C:/PROYECTOS/Car/Coche/code/<a class="el" href="_scene_8cpp.html">Scene.cpp</a></li>
+<a id="af3e7df0b4aafcb25b2d1731fe3847a7f" name="af3e7df0b4aafcb25b2d1731fe3847a7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3e7df0b4aafcb25b2d1731fe3847a7f">&#9670;&nbsp;</a></span>pos</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">b2Vec2 Balls::pos</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>La documentación para esta estructura fue generada a partir del siguiente fichero:<ul>
+<li>C:/PROYECTOS/Car/Coche/code/<a class="el" href="_terrain_8hpp_source.html">Terrain.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

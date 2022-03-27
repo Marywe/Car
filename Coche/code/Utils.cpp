@@ -11,7 +11,7 @@
 * controla el input del Reset (pulsar a la R) para volver a empezar con el coche, y por último, cierra el bucle de llamada
 * cuando el programa se cierra.
 */
-bool process_events(Window& window, b2World& physics_world, float window_height, float scale, Car* car)
+bool process_events(Window& window, b2World& physics_world, float window_height, float scale, Car* car, Terrain* terrain)
 {
     Event event;
 
@@ -40,6 +40,11 @@ bool process_events(Window& window, b2World& physics_world, float window_height,
             if (Keyboard::isKeyPressed(Keyboard::R))
             {
                 car->Reset();
+            }
+
+            if (Keyboard::isKeyPressed(Keyboard::Q))
+            {
+                terrain->sensorPlat->SetActivated(true);
             }
 
             break;
@@ -114,7 +119,7 @@ b2Body* create_circle(b2World& physics_world, b2BodyType body_type, float x, flo
     b2FixtureDef body_fixture;
 
     body_fixture.shape = &body_shape;
-    body_fixture.density = 0.10f;
+    body_fixture.density = 0.50f;
     body_fixture.restitution = 0.75f;
     body_fixture.friction = 0.50f;
 

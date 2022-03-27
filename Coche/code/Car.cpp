@@ -20,8 +20,8 @@ void Car::Brake()
 
 void Car::Move(int dir) 
 {
-    joints[0]->SetMotorSpeed(100*dir);
-    joints[1]->SetMotorSpeed(100*dir);
+    joints[0]->SetMotorSpeed(70*dir);
+    joints[1]->SetMotorSpeed(70*dir);
     
 }
 
@@ -60,14 +60,19 @@ b2Body* Car::CreateWheel(b2World& physics_world, b2BodyType body_type, float x, 
 
 void Car::CreateCar(b2World& physics_world, b2Vec2 carPos)
 {
-    chasis = CreateChasis(physics_world, b2_dynamicBody, carPos.x, carPos.y, 0.5f, 0.1f);
-    Wheels[0] = CreateWheel(physics_world, b2_dynamicBody, 0.1f, 1, 0.1f);
-    Wheels[1] = CreateWheel(physics_world, b2_dynamicBody, 0.4, 1, 0.1f);
+    Wheels[2] = CreateWheel(physics_world, b2_dynamicBody, carPos.x, carPos.y, 0.07f);
 
-    joints[0] = create_revolute_joint(physics_world, chasis, Wheels[0], b2Vec2(-0.5f, -0.1), true);
-    joints[1] = create_revolute_joint(physics_world, chasis, Wheels[1], b2Vec2(0.5f, -0.1), true);
-    joints[0]->SetMaxMotorTorque(1);
-    joints[1]->SetMaxMotorTorque(1);
+    chasis = CreateChasis(physics_world, b2_dynamicBody, carPos.x, carPos.y, 0.55f, 0.1f);
+    Wheels[0] = CreateWheel(physics_world, b2_dynamicBody, 0.1f, 1, 0.15f);
+    Wheels[1] = CreateWheel(physics_world, b2_dynamicBody, 0.4, 1, 0.15f);
+
+    joints[0] = create_revolute_joint(physics_world, chasis, Wheels[0], b2Vec2(-0.5f, -0.15), true);
+    joints[1] = create_revolute_joint(physics_world, chasis, Wheels[1], b2Vec2(0.5f, -0.15), true);
+
+    joints[2] = create_revolute_joint(physics_world, chasis, Wheels[2], b2Vec2(-0.55f, 0.1f), true);
+
+    joints[0]->SetMaxMotorTorque(50);
+    joints[1]->SetMaxMotorTorque(100);
 
 }
 

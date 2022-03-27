@@ -57,7 +57,7 @@ void Scene::Update()
         timer.restart();
 
         // Process window events:
-        exit = process_events(*window, *physics_world, 800, physics_to_graphics_scale, car.get ());
+        exit = process_events(*window, *physics_world, 800, physics_to_graphics_scale, car.get (), terrain.get());
         // Update:
         physics_world->Step(delta_time, 8, 4);
 

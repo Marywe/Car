@@ -32,6 +32,12 @@ int main ()
  * con las librerías externas usadas, otra con esta documentación y la última, la de projects, donde se encuentra el .vcxproj
  * que abrirá el proyecto en Visual Studio. Esta vez se han borrado los archivos temporales y las builds, que se generarán automáticamente
  * al darle al "Play" en el proyecto.
+ * 
+ * \section about Sobre el proyecto
+ * 
+ * He tenido algún problema para compilar e interpretar alguna cosilla, lo que me ha retrasado bastante el desarrollo. En el proyecto no tenemos
+ * un escenario terminado, pero sí muchos de los elementos que requería la práctica, aunque por separado: el coche que se mueve (A - D - espacio),
+ * elementos del escenario, un Input para probar el Reset del coche (R) y otro para probar la torreta (Q)...
  *
  */
 

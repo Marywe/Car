@@ -29,6 +29,7 @@ public:
     inline b2Body* GetBase() { return base; }
     inline void SetPos(b2Vec2 _pos) { pos = _pos; }
 
+    //! Activa la torreta para que caigan las pelotas cuando nota el sensor.
     void ActivateTurret();
 
 };
@@ -83,6 +84,14 @@ public:
     inline bool GetActivated() { return activated; }
     inline void SetActivated(bool _act) { activated = _act;  }
 
+};
+//! Pequeña estructura para guardar las pelotas
+struct Balls
+{
+    b2Body* balls[5];
+    b2Vec2 pos;
+
+    void CreateBalls();
 };
 
 

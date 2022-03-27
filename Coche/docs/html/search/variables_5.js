@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['v_0',['V',['../class_turret.html#a93f64ad08295136bc36764591cd1af8b',1,'Turret']]]
+  ['tag_0',['TAG',['../struct_tag.html#a455e3d5f83d068ae22e3a3f54b64c3b7',1,'Tag']]],
+  ['turret_1',['turret',['../class_terrain.html#a16450479b1bec5360355dd6f4fb8eb99',1,'Terrain']]]
 ];

@@ -11,12 +11,14 @@
 #include <SFML/Graphics.hpp>
 #include <box2d/box2d.h>
 #include "Car.hpp"
+#include "Terrain.hpp"
 
 using namespace sf;
 using namespace std;
 
 
-class Car; 
+class Car;
+class Terrain;
 
 //! Creo un tag con string para metérselo al userdata y diferenciarlos mejor.
 struct Tag {
@@ -39,7 +41,7 @@ inline b2Vec2 sfml_position_to_box2d_position(const Vector2f& sfml_position, flo
 
 
 //! Función encargada de rocesar los eventos. Por ejemplo, un evento sería cualquier clase de input o que se cierre la ventana.
-bool process_events(Window& window, b2World& physics_world, float window_height, float scale, Car* car);
+bool process_events(Window& window, b2World& physics_world, float window_height, float scale, Car* car, Terrain* terrain);
 
 b2Body* create_circle(b2World& physics_world, b2BodyType body_type, float x, float y, float radius);
 

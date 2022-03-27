@@ -8,15 +8,14 @@
 
 b2Body* Turret::CreateBase(b2World& physics_world, b2BodyType body_type, float x, float y, float width, float height)
 {
-  
-	this->base = create_box(physics_world, body_type, x, y, width, height);
-	return base;
-	
+
+    this->base = create_box(physics_world, body_type, x, y, width, height);
+    return base;
+
 }
 
 void Turret::CreateV(b2World& physics_world, b2BodyType body_type, float x, float y, float width, float height)
 {
-
    // Posición inicial absoluta    
     b2BodyDef V_body_def;
 
@@ -38,21 +37,47 @@ void Turret::CreateV(b2World& physics_world, b2BodyType body_type, float x, floa
     v_left_fixture.shape = &v_left_shape;
     v_right_fixture.shape = &v_right_shape;
 
+    v_left_fixture.density = 0.100f;
+    v_left_fixture.restitution = 0.050f;
+    v_left_fixture.friction = 1.0f;
+
+    v_right_fixture.density = 0.100f;
+    v_right_fixture.restitution = 0.05f;
+    v_right_fixture.friction = 1.0f;
+
     vBody->CreateFixture(&v_left_fixture);
     vBody->CreateFixture(&v_right_fixture);
 
     this->V = vBody;
 }
 
+void Turret::ActivateTurret()
+{
+    joint->EnableLimit(false);
+    joint->SetMaxMotorTorque(50);
+    joint->SetMotorSpeed(10);
+}
+
+////////////////////////////////////////////////////////////////////////////
+
 void Platform::CreateBase(b2World& physics_world, b2BodyType body_type, float x, float y, float width, float height)
 {
 	this->base = create_box(physics_world, body_type, x, y, width, height);
 
 }
+
 void Platform::CreateFloor(b2World& physics_world, b2BodyType body_type, float x, float y, float width, float height)
 {
 	this->floor = create_box(physics_world, body_type, x, y, width, height);
 }
+
+void Platform::Move() 
+{
+
+}
+
+////////////////////////////////////////////////////////////////////////////
+
 void SensorPlat::CreateBase(b2World& physics_world, b2BodyType body_type, float x, float y, float width, float height)
 {
     // Se crea el body:
@@ -85,9 +110,7 @@ void SensorPlat::CreateBase(b2World& physics_world, b2BodyType body_type, float 
    
 }
 
-void Platform::Move() {
-
-}
+////////////////////////////////////////////////////////////////////////////
 
 void Terrain::CreateTerrain(b2World& physics_world)
 {
@@ -105,11 +128,13 @@ void Terrain::CreateTerrain(b2World& physics_world)
 
     turret = new Turret();
     turret->SetPos(b2Vec2(9, 2));
-    turret->circle = create_circle(physics_world, b2_dynamicBody, turret->GetPos().x, turret->GetPos().y + 0.65, 0.2f);
-    turret->CreateBase(physics_world, b2_kinematicBody, turret->GetPos().x, turret->GetPos().y, .1f, .65f);
+    turret->circle = create_circle(physics_world, b2_dynamicBody, turret->GetPos().x, turret->GetPos().y + 0.7, 0.15f);
+    turret->CreateBase(physics_world, b2_kinematicBody, turret->GetPos().x, turret->GetPos().y, .1f, .7f);
     turret->CreateV(physics_world, b2_dynamicBody, turret->GetPos().x, turret->GetPos().y, 0.1f, 0.6f);
-    turret->joint = create_revolute_joint(physics_world, turret->V, turret->circle, b2Vec2(0, 0.65), true);
-   // turret->joint2 = create_revolute_joint(physics_world, turret->GetBase(), turret->circle, b2Vec2(0, 0.65), true);
+    turret->joint = create_revolute_joint(physics_world, turret->V, turret->circle, b2Vec2(0, 0.65f), true);
+    turret->joint->SetLimits(0, 0);
+    turret->joint->EnableLimit(true);
+    turret->joint2 = create_revolute_joint(physics_world, turret->GetBase(), turret->circle, b2Vec2(0, 0.65), true);
     
 
     platform = new Platform();
@@ -119,28 +144,24 @@ void Terrain::CreateTerrain(b2World& physics_world)
 
 
     sensorPlat = new SensorPlat();
-    sensorPlat->SetPos(b2Vec2(9,0));
-    sensorPlat->CreateBase(physics_world, b2_kinematicBody, sensorPlat->GetPos().x, sensorPlat->GetPos().y, 1.3f, .1f);
+    sensorPlat->SetPos(b2Vec2(10,0));
+    sensorPlat->CreateBase(physics_world, b2_kinematicBody, sensorPlat->GetPos().x, sensorPlat->GetPos().y, 1.5f, .1f);
 }
 
 void Terrain::Update() 
 {    
 
-    if (sensorPlat->GetActivated())
+    if (sensorPlat->GetActivated() && platform->GetDown())
     {
         platform->SetDown(false);
+        turret->ActivateTurret();
     }
 
     if (!platform->GetDown())
     {
         platform->Move();
 
-        turret->joint->SetMotorSpeed(600);
-        turret->joint->SetMaxMotorTorque(100);
-    }
-
-
-    
+    }    
 
 
 }

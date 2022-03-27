@@ -25,8 +25,8 @@ public:
 
     b2Body* chasis;
 
-    b2RevoluteJoint* joints[2];
-    b2Body* Wheels[2];
+    b2RevoluteJoint* joints[4];
+    b2Body* Wheels[3];
 
     b2Body* CreateWheel(b2World& physics_world, b2BodyType body_type, float x, float y, float radius);
     b2Body* CreateChasis(b2World& physics_world, b2BodyType body_type, float x, float y, float width, float height);
@@ -34,6 +34,7 @@ public:
     //! Encapsulsa todos los elementos que se crean del coche en una única función que llama al resto.
     void CreateCar(b2World& physics_world, b2Vec2 pos);
 
+    //! Función que frena el motor. Simplemente seta la speed de los joints de las ruedas a 0 para conseguir un efecto de deceleración. Se puede llamar con el espacio.
     void Brake();
     //! Este Move se llama en el procesador de eventos cuando se pulsa para mover el coche, enviándole además la dirección en la que quiere ir.
     void Move(int dir = 0);
