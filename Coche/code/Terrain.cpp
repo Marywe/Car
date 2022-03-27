@@ -6,6 +6,16 @@
 
 #include "Terrain.hpp"
 
+void Balls::CreateBalls(b2World& physics_world, float x, float y, float rad)
+{
+    for (size_t i = 0; i < ballsSize; i++)
+    {
+        ballsBod[i] = create_circle(physics_world, b2_dynamicBody, x + (i * 0.1), y, rad);
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////
+
 b2Body* Turret::CreateBase(b2World& physics_world, b2BodyType body_type, float x, float y, float width, float height)
 {
 
@@ -135,6 +145,10 @@ void Terrain::CreateTerrain(b2World& physics_world)
     turret->joint->SetLimits(0, 0);
     turret->joint->EnableLimit(true);
     turret->joint2 = create_revolute_joint(physics_world, turret->GetBase(), turret->circle, b2Vec2(0, 0.65), true);
+
+
+    balls = new Balls;
+    balls->CreateBalls(physics_world, turret->GetPos().x - 0.05f, turret->GetPos().y, 0.08f);
     
 
     platform = new Platform();

@@ -77,21 +77,23 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Métodos públicos</h2></td></tr>
-<tr class="memitem:ae3779630d3c73d7dda90e2d19ae42ff3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_balls.html#ae3779630d3c73d7dda90e2d19ae42ff3">CreateBalls</a> ()</td></tr>
-<tr class="separator:ae3779630d3c73d7dda90e2d19ae42ff3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f886b7e60309c547227711eb8f3b841"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_balls.html#a0f886b7e60309c547227711eb8f3b841">CreateBalls</a> (b2World &amp;physics_world, float x, float y, float rad)</td></tr>
+<tr class="separator:a0f886b7e60309c547227711eb8f3b841"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Atributos públicos</h2></td></tr>
-<tr class="memitem:a0bdcd98b50e8730900f77194b0ab171a"><td class="memItemLeft" align="right" valign="top">b2Body *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_balls.html#a0bdcd98b50e8730900f77194b0ab171a">balls</a> [5]</td></tr>
-<tr class="separator:a0bdcd98b50e8730900f77194b0ab171a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8a622c5af38317e35571ab8aef55c74"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_balls.html#ab8a622c5af38317e35571ab8aef55c74">ballsSize</a> = 5</td></tr>
+<tr class="separator:ab8a622c5af38317e35571ab8aef55c74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50057a9facded3fd7d558fdbe61c97e7"><td class="memItemLeft" align="right" valign="top">b2Body *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_balls.html#a50057a9facded3fd7d558fdbe61c97e7">ballsBod</a> [5]</td></tr>
+<tr class="separator:a50057a9facded3fd7d558fdbe61c97e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3e7df0b4aafcb25b2d1731fe3847a7f"><td class="memItemLeft" align="right" valign="top">b2Vec2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_balls.html#af3e7df0b4aafcb25b2d1731fe3847a7f">pos</a></td></tr>
 <tr class="separator:af3e7df0b4aafcb25b2d1731fe3847a7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
 <div class="textblock"><p >Pequeña estructura para guardar las pelotas. </p>
 </div><h2 class="groupheader">Documentación de las funciones miembro</h2>
-<a id="ae3779630d3c73d7dda90e2d19ae42ff3" name="ae3779630d3c73d7dda90e2d19ae42ff3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae3779630d3c73d7dda90e2d19ae42ff3">&#9670;&nbsp;</a></span>CreateBalls()</h2>
+<a id="a0f886b7e60309c547227711eb8f3b841" name="a0f886b7e60309c547227711eb8f3b841"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f886b7e60309c547227711eb8f3b841">&#9670;&nbsp;</a></span>CreateBalls()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -99,8 +101,31 @@ Atributos públicos</h2></td></tr>
         <tr>
           <td class="memname">void Balls::CreateBalls </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">b2World &amp;&#160;</td>
+          <td class="paramname"><em>physics_world</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>rad</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -108,14 +133,28 @@ Atributos públicos</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Documentación de los datos miembro</h2>
-<a id="a0bdcd98b50e8730900f77194b0ab171a" name="a0bdcd98b50e8730900f77194b0ab171a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0bdcd98b50e8730900f77194b0ab171a">&#9670;&nbsp;</a></span>balls</h2>
+<a id="a50057a9facded3fd7d558fdbe61c97e7" name="a50057a9facded3fd7d558fdbe61c97e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50057a9facded3fd7d558fdbe61c97e7">&#9670;&nbsp;</a></span>ballsBod</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">b2Body* Balls::balls[5]</td>
+          <td class="memname">b2Body* Balls::ballsBod[5]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab8a622c5af38317e35571ab8aef55c74" name="ab8a622c5af38317e35571ab8aef55c74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8a622c5af38317e35571ab8aef55c74">&#9670;&nbsp;</a></span>ballsSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int Balls::ballsSize = 5</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -136,8 +175,9 @@ Atributos públicos</h2></td></tr>
 
 </div>
 </div>
-<hr/>La documentación para esta estructura fue generada a partir del siguiente fichero:<ul>
+<hr/>La documentación para esta estructura fue generada a partir de los siguientes ficheros:<ul>
 <li>C:/PROYECTOS/Car/Coche/code/<a class="el" href="_terrain_8hpp_source.html">Terrain.hpp</a></li>
+<li>C:/PROYECTOS/Car/Coche/code/<a class="el" href="_terrain_8cpp.html">Terrain.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

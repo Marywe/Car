@@ -88,10 +88,11 @@ public:
 //! Pequeña estructura para guardar las pelotas
 struct Balls
 {
-    b2Body* balls[5];
+    const int ballsSize = 5;
+    b2Body* ballsBod[5];
     b2Vec2 pos;
 
-    void CreateBalls();
+    void CreateBalls(b2World& physics_world, float x, float y, float rad);
 };
 
 
@@ -104,6 +105,7 @@ public:
     Turret* turret;
     Platform* platform;
     SensorPlat* sensorPlat;
+    Balls* balls;
 
 
 //!En esta función se crean todos los elementos del terreno, el circuito entero. Se crea y se coloca la base, edges para que el
