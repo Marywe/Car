@@ -1,6 +1,6 @@
 #include "MyContactListener.hpp"
 
-void MyContactLister::BeginContact(b2Contact* contact)
+void MyContactListener::BeginContact(b2Contact* contact)
 {
 	b2BodyUserData userDataA = contact->GetFixtureA()->GetBody()->GetUserData();
 	b2BodyUserData userDataB = contact->GetFixtureA()->GetBody()->GetUserData();

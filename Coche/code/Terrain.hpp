@@ -85,7 +85,7 @@ public:
 
 };
 
-static class Terrain
+class Terrain
 {
     
 public:

@@ -4,7 +4,7 @@
 #include "Car.hpp"
 #include "Terrain.hpp"
 
- class MyContactLister : public b2ContactListener
+ class MyContactListener : public b2ContactListener
 {
 private:
 	Car* car;
@@ -12,9 +12,8 @@ private:
 
 public:
 
-	MyContactLister(Car* _car, SensorPlat* _sensor) : car(_car), sensorPlat(_sensor) {}
+	MyContactListener(Car* _car, SensorPlat* _sensor) : car(_car), sensorPlat(_sensor) {}
 	void virtual BeginContact(b2Contact* contact);
-	
-	
+		
 
 };

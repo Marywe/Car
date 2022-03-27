@@ -1,6 +1,7 @@
 #pragma once
 
 #include <box2d/box2d.h>
+#include "Utils.hpp"
 
 class Car 
 {
@@ -23,6 +24,8 @@ public:
     b2Body* CreateWheel(b2World& physics_world, b2BodyType body_type, float x, float y, float radius);
 
     b2Body* CreateChasis(b2World& physics_world, b2BodyType body_type, float x, float y, float width, float height);
+
+    void CreateCar(b2World& physics_world, b2Vec2 pos);
 
     void Brake();
     void Move(int dir = 0);

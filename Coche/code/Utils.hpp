@@ -12,6 +12,7 @@ using namespace std;
      * superior. Esta función se encarga de convertir el sistema de coordenadas para que la escena
      * no se vea invertida.
      */
+class Car; 
 
 inline Vector2f box2d_position_to_sfml_position(const b2Vec2& box2d_position, float window_height, float scale)
 {
@@ -23,7 +24,7 @@ inline b2Vec2 sfml_position_to_box2d_position(const Vector2f& sfml_position, flo
     return b2Vec2(sfml_position.x / scale, (window_height - sfml_position.y) / scale);
 }
 
-bool process_events(Window& window, b2World& physics_world, float window_height, float scale, Car * car = nullptr);
+bool process_events(Window& window, b2World& physics_world, float window_height, float scale, Car* car);
 
 b2Body* create_circle(b2World& physics_world, b2BodyType body_type, float x, float y, float radius);
 

@@ -48,6 +48,19 @@ b2Body* Car::CreateWheel(b2World& physics_world, b2BodyType body_type, float x, 
     return body;
 }
 
+void Car::CreateCar(b2World& physics_world, b2Vec2 carPos)
+{
+    chasis = CreateChasis(physics_world, b2_dynamicBody, carPos.x, carPos.y, 0.5f, 0.1f);
+    Wheels[0] = CreateWheel(physics_world, b2_dynamicBody, 0.1f, 1, 0.1f);
+    Wheels[1] = CreateWheel(physics_world, b2_dynamicBody, 0.4, 1, 0.1f);
+
+    joints[0] = create_revolute_joint(physics_world, chasis, Wheels[0], b2Vec2(-0.5f, -0.1), true);
+    joints[1] = create_revolute_joint(physics_world, chasis, Wheels[1], b2Vec2(0.5f, -0.1), true);
+    joints[0]->SetMaxMotorTorque(1);
+    joints[1]->SetMaxMotorTorque(1);
+
+}
+
 b2Body* Car::CreateChasis(b2World& physics_world, b2BodyType body_type, float x, float y, float width, float height)
 {
     // Se crea el body:
