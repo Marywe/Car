@@ -1,0 +1,762 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Car: Referencia del Archivo C:/PROYECTOS/Car/Coche/code/Utils.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Car
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_050edd66366d13764f98250ef6db77f6.html">code</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funciones</a>  </div>
+  <div class="headertitle"><div class="title">Referencia del Archivo Utils.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;SFML/Window.hpp&gt;</code><br />
+<code>#include &lt;SFML/Graphics.hpp&gt;</code><br />
+<code>#include &lt;box2d/box2d.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="_car_8hpp_source.html">Car.hpp</a>&quot;</code><br />
+</div>
+<p><a href="_utils_8hpp_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a38334a624db4ec85383e55b1ebf7082c"><td class="memItemLeft" align="right" valign="top">Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_utils_8hpp.html#a38334a624db4ec85383e55b1ebf7082c">box2d_position_to_sfml_position</a> (const b2Vec2 &amp;box2d_position, float window_height, float scale)</td></tr>
+<tr class="separator:a38334a624db4ec85383e55b1ebf7082c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4fa6888e9e8de6d9b659c41ed146e3c"><td class="memItemLeft" align="right" valign="top">b2Vec2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_utils_8hpp.html#ac4fa6888e9e8de6d9b659c41ed146e3c">sfml_position_to_box2d_position</a> (const Vector2f &amp;sfml_position, float window_height, float scale)</td></tr>
+<tr class="memdesc:ac4fa6888e9e8de6d9b659c41ed146e3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">La misma que la anterior pero del revés.  <a href="_utils_8hpp.html#ac4fa6888e9e8de6d9b659c41ed146e3c">Más...</a><br /></td></tr>
+<tr class="separator:ac4fa6888e9e8de6d9b659c41ed146e3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf9c45833b4004457d36b1370a124f96"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_utils_8hpp.html#adf9c45833b4004457d36b1370a124f96">process_events</a> (Window &amp;window, b2World &amp;physics_world, float window_height, float scale, <a class="el" href="class_car.html">Car</a> *car)</td></tr>
+<tr class="memdesc:adf9c45833b4004457d36b1370a124f96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función encargada de rocesar los eventos. Por ejemplo, un evento sería cualquier clase de input o que se cierre la ventana.  <a href="_utils_8hpp.html#adf9c45833b4004457d36b1370a124f96">Más...</a><br /></td></tr>
+<tr class="separator:adf9c45833b4004457d36b1370a124f96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7ef901e6967f919ea0d3e1f169b93c6"><td class="memItemLeft" align="right" valign="top">b2Body *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_utils_8hpp.html#ab7ef901e6967f919ea0d3e1f169b93c6">create_circle</a> (b2World &amp;physics_world, b2BodyType body_type, float x, float y, float radius)</td></tr>
+<tr class="separator:ab7ef901e6967f919ea0d3e1f169b93c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a906395fc5cab536ea3bf5813d5e925d2"><td class="memItemLeft" align="right" valign="top">b2Body *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_utils_8hpp.html#a906395fc5cab536ea3bf5813d5e925d2">create_box</a> (b2World &amp;physics_world, b2BodyType body_type, float x, float y, float width, float height)</td></tr>
+<tr class="separator:a906395fc5cab536ea3bf5813d5e925d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9e4ce8f670b99a64cde2612248d5c61"><td class="memItemLeft" align="right" valign="top">b2Body *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_utils_8hpp.html#aa9e4ce8f670b99a64cde2612248d5c61">create_edge</a> (b2World &amp;physics_world, b2BodyType body_type, float x0, float y0, float x1, float y1)</td></tr>
+<tr class="separator:aa9e4ce8f670b99a64cde2612248d5c61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a905f7f8d399dab476526cc3e11ab83c7"><td class="memItemLeft" align="right" valign="top">b2RevoluteJoint *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_utils_8hpp.html#a905f7f8d399dab476526cc3e11ab83c7">create_revolute_joint</a> (b2World &amp;physics_world, b2Body *body_a, b2Body *body_b, b2Vec2 offset, bool enable_motor=false)</td></tr>
+<tr class="separator:a905f7f8d399dab476526cc3e11ab83c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29c05dc0ab8fc83338fcb947801b6750"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_utils_8hpp.html#a29c05dc0ab8fc83338fcb947801b6750">render_circle</a> (b2Vec2 center, float radius, const b2Transform &amp;transform, RenderWindow &amp;renderer, float window_height, float scale)</td></tr>
+<tr class="separator:a29c05dc0ab8fc83338fcb947801b6750"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7ec6c392a7fdb59ed743b93c678ff65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_utils_8hpp.html#ac7ec6c392a7fdb59ed743b93c678ff65">render_segment</a> (const Vector2f &amp;start, const Vector2f &amp;end, const Color &amp;color, RenderWindow &amp;renderer)</td></tr>
+<tr class="separator:ac7ec6c392a7fdb59ed743b93c678ff65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c98b52c6b8285fe6f13adce620143a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_utils_8hpp.html#a7c98b52c6b8285fe6f13adce620143a5">render_segment</a> (b2Vec2 start, b2Vec2 end, const b2Transform &amp;transform, RenderWindow &amp;renderer, float window_height, float scale)</td></tr>
+<tr class="separator:a7c98b52c6b8285fe6f13adce620143a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73c5ca13d25bae0eb7eb57ec475e0d0f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_utils_8hpp.html#a73c5ca13d25bae0eb7eb57ec475e0d0f">render_polygon</a> (const b2Vec2 *vertices, int number_of_vertices, const b2Transform &amp;transform, RenderWindow &amp;renderer, float window_height, float scale)</td></tr>
+<tr class="separator:a73c5ca13d25bae0eb7eb57ec475e0d0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36f985bcf58b3e54eb42fe499303a9c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_utils_8hpp.html#a36f985bcf58b3e54eb42fe499303a9c4">render</a> (b2World &amp;physics_world, RenderWindow &amp;renderer, float scale)</td></tr>
+<tr class="memdesc:a36f985bcf58b3e54eb42fe499303a9c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">En esta funcion se llama a todo lo que se tiene que renderizar y lo renderiza.  <a href="_utils_8hpp.html#a36f985bcf58b3e54eb42fe499303a9c4">Más...</a><br /></td></tr>
+<tr class="separator:a36f985bcf58b3e54eb42fe499303a9c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdb6bf564b02c4f17f71ae449a3970a5"><td class="memItemLeft" align="right" valign="top">b2Body *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_utils_8hpp.html#afdb6bf564b02c4f17f71ae449a3970a5">create_curve</a> (b2World &amp;physics_world, b2BodyType body_type, float x0, float y0, float x1, float y1)</td></tr>
+<tr class="separator:afdb6bf564b02c4f17f71ae449a3970a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentación de las funciones</h2>
+<a id="a38334a624db4ec85383e55b1ebf7082c" name="a38334a624db4ec85383e55b1ebf7082c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38334a624db4ec85383e55b1ebf7082c">&#9670;&nbsp;</a></span>box2d_position_to_sfml_position()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector2f box2d_position_to_sfml_position </td>
+          <td>(</td>
+          <td class="paramtype">const b2Vec2 &amp;&#160;</td>
+          <td class="paramname"><em>box2d_position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>window_height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>scale</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >En Box2D las coordenadas Y crecen hacia arriba y en SFML crecen hacia abajo desde el borde superior. Esta función se encarga de convertir el sistema de coordenadas para que la escena no se vea invertida. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_utils_8hpp_source.html#l00019">19</a> del archivo <a class="el" href="_utils_8hpp_source.html">Utils.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a906395fc5cab536ea3bf5813d5e925d2" name="a906395fc5cab536ea3bf5813d5e925d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a906395fc5cab536ea3bf5813d5e925d2">&#9670;&nbsp;</a></span>create_box()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">b2Body * create_box </td>
+          <td>(</td>
+          <td class="paramtype">b2World &amp;&#160;</td>
+          <td class="paramname"><em>physics_world</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">b2BodyType&#160;</td>
+          <td class="paramname"><em>body_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>height</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_utils_8cpp_source.html#l00060">60</a> del archivo <a class="el" href="_utils_8cpp_source.html">Utils.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ab7ef901e6967f919ea0d3e1f169b93c6" name="ab7ef901e6967f919ea0d3e1f169b93c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7ef901e6967f919ea0d3e1f169b93c6">&#9670;&nbsp;</a></span>create_circle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">b2Body * create_circle </td>
+          <td>(</td>
+          <td class="paramtype">b2World &amp;&#160;</td>
+          <td class="paramname"><em>physics_world</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">b2BodyType&#160;</td>
+          <td class="paramname"><em>body_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>radius</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_utils_8cpp_source.html#l00089">89</a> del archivo <a class="el" href="_utils_8cpp_source.html">Utils.cpp</a>.</p>
+
+</div>
+</div>
+<a id="afdb6bf564b02c4f17f71ae449a3970a5" name="afdb6bf564b02c4f17f71ae449a3970a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdb6bf564b02c4f17f71ae449a3970a5">&#9670;&nbsp;</a></span>create_curve()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">b2Body * create_curve </td>
+          <td>(</td>
+          <td class="paramtype">b2World &amp;&#160;</td>
+          <td class="paramname"><em>physics_world</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">b2BodyType&#160;</td>
+          <td class="paramname"><em>body_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_utils_8cpp_source.html#l00147">147</a> del archivo <a class="el" href="_utils_8cpp_source.html">Utils.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aa9e4ce8f670b99a64cde2612248d5c61" name="aa9e4ce8f670b99a64cde2612248d5c61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9e4ce8f670b99a64cde2612248d5c61">&#9670;&nbsp;</a></span>create_edge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">b2Body * create_edge </td>
+          <td>(</td>
+          <td class="paramtype">b2World &amp;&#160;</td>
+          <td class="paramname"><em>physics_world</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">b2BodyType&#160;</td>
+          <td class="paramname"><em>body_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_utils_8cpp_source.html#l00120">120</a> del archivo <a class="el" href="_utils_8cpp_source.html">Utils.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a905f7f8d399dab476526cc3e11ab83c7" name="a905f7f8d399dab476526cc3e11ab83c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a905f7f8d399dab476526cc3e11ab83c7">&#9670;&nbsp;</a></span>create_revolute_joint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">b2RevoluteJoint * create_revolute_joint </td>
+          <td>(</td>
+          <td class="paramtype">b2World &amp;&#160;</td>
+          <td class="paramname"><em>physics_world</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">b2Body *&#160;</td>
+          <td class="paramname"><em>body_a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">b2Body *&#160;</td>
+          <td class="paramname"><em>body_b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">b2Vec2&#160;</td>
+          <td class="paramname"><em>offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enable_motor</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_utils_8cpp_source.html#l00171">171</a> del archivo <a class="el" href="_utils_8cpp_source.html">Utils.cpp</a>.</p>
+
+</div>
+</div>
+<a id="adf9c45833b4004457d36b1370a124f96" name="adf9c45833b4004457d36b1370a124f96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf9c45833b4004457d36b1370a124f96">&#9670;&nbsp;</a></span>process_events()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool process_events </td>
+          <td>(</td>
+          <td class="paramtype">Window &amp;&#160;</td>
+          <td class="paramname"><em>window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">b2World &amp;&#160;</td>
+          <td class="paramname"><em>physics_world</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>window_height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>scale</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_car.html">Car</a> *&#160;</td>
+          <td class="paramname"><em>car</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Función encargada de rocesar los eventos. Por ejemplo, un evento sería cualquier clase de input o que se cierre la ventana. </p>
+<p >Función donde se procesan todos los eventos de input y de ventana. Comprueba el input del coche para llamarlo y hacer que se mueva / frene, controla el input del Reset (pulsar a la R) para volver a empezar con el coche, y por último, cierra el bucle de llamada cuando el programa se cierra. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_utils_8cpp_source.html#l00008">8</a> del archivo <a class="el" href="_utils_8cpp_source.html">Utils.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a36f985bcf58b3e54eb42fe499303a9c4" name="a36f985bcf58b3e54eb42fe499303a9c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36f985bcf58b3e54eb42fe499303a9c4">&#9670;&nbsp;</a></span>render()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void render </td>
+          <td>(</td>
+          <td class="paramtype">b2World &amp;&#160;</td>
+          <td class="paramname"><em>physics_world</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">RenderWindow &amp;&#160;</td>
+          <td class="paramname"><em>renderer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>scale</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>En esta funcion se llama a todo lo que se tiene que renderizar y lo renderiza. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_utils_8cpp_source.html#l00273">273</a> del archivo <a class="el" href="_utils_8cpp_source.html">Utils.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a29c05dc0ab8fc83338fcb947801b6750" name="a29c05dc0ab8fc83338fcb947801b6750"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29c05dc0ab8fc83338fcb947801b6750">&#9670;&nbsp;</a></span>render_circle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void render_circle </td>
+          <td>(</td>
+          <td class="paramtype">b2Vec2&#160;</td>
+          <td class="paramname"><em>center</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>radius</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const b2Transform &amp;&#160;</td>
+          <td class="paramname"><em>transform</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">RenderWindow &amp;&#160;</td>
+          <td class="paramname"><em>renderer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>window_height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>scale</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_utils_8cpp_source.html#l00186">186</a> del archivo <a class="el" href="_utils_8cpp_source.html">Utils.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a73c5ca13d25bae0eb7eb57ec475e0d0f" name="a73c5ca13d25bae0eb7eb57ec475e0d0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73c5ca13d25bae0eb7eb57ec475e0d0f">&#9670;&nbsp;</a></span>render_polygon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void render_polygon </td>
+          <td>(</td>
+          <td class="paramtype">const b2Vec2 *&#160;</td>
+          <td class="paramname"><em>vertices</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>number_of_vertices</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const b2Transform &amp;&#160;</td>
+          <td class="paramname"><em>transform</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">RenderWindow &amp;&#160;</td>
+          <td class="paramname"><em>renderer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>window_height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>scale</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_utils_8cpp_source.html#l00246">246</a> del archivo <a class="el" href="_utils_8cpp_source.html">Utils.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a7c98b52c6b8285fe6f13adce620143a5" name="a7c98b52c6b8285fe6f13adce620143a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c98b52c6b8285fe6f13adce620143a5">&#9670;&nbsp;</a></span>render_segment() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void render_segment </td>
+          <td>(</td>
+          <td class="paramtype">b2Vec2&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">b2Vec2&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const b2Transform &amp;&#160;</td>
+          <td class="paramname"><em>transform</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">RenderWindow &amp;&#160;</td>
+          <td class="paramname"><em>renderer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>window_height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>scale</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_utils_8cpp_source.html#l00224">224</a> del archivo <a class="el" href="_utils_8cpp_source.html">Utils.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ac7ec6c392a7fdb59ed743b93c678ff65" name="ac7ec6c392a7fdb59ed743b93c678ff65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7ec6c392a7fdb59ed743b93c678ff65">&#9670;&nbsp;</a></span>render_segment() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void render_segment </td>
+          <td>(</td>
+          <td class="paramtype">const Vector2f &amp;&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Vector2f &amp;&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Color &amp;&#160;</td>
+          <td class="paramname"><em>color</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">RenderWindow &amp;&#160;</td>
+          <td class="paramname"><em>renderer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_utils_8cpp_source.html#l00207">207</a> del archivo <a class="el" href="_utils_8cpp_source.html">Utils.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ac4fa6888e9e8de6d9b659c41ed146e3c" name="ac4fa6888e9e8de6d9b659c41ed146e3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4fa6888e9e8de6d9b659c41ed146e3c">&#9670;&nbsp;</a></span>sfml_position_to_box2d_position()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">b2Vec2 sfml_position_to_box2d_position </td>
+          <td>(</td>
+          <td class="paramtype">const Vector2f &amp;&#160;</td>
+          <td class="paramname"><em>sfml_position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>window_height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>scale</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>La misma que la anterior pero del revés. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_utils_8hpp_source.html#l00025">25</a> del archivo <a class="el" href="_utils_8hpp_source.html">Utils.hpp</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

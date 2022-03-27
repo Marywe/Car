@@ -4,7 +4,9 @@
 #include "Car.hpp"
 #include "Terrain.hpp"
 
- class MyContactListener : public b2ContactListener
+
+//! Clase que hereda de b2ContactListener para personalizarlo a nuestro gusto. Se encarga de procesar todas las colisiones importantes en nuestro juego.
+class MyContactListener : public b2ContactListener
 {
 private:
 	Car* car;
@@ -13,7 +15,10 @@ private:
 public:
 
 	MyContactListener(Car* _car, SensorPlat* _sensor) : car(_car), sensorPlat(_sensor) {}
+
+	//! Función virtual. Cuando dos bodys entran en contacto, salta esta función automáticamente, y es la que gestiona los diferentes resultados
+	//! de las colisiones que nos interesan.
 	void virtual BeginContact(b2Contact* contact);
-		
+
 
 };
