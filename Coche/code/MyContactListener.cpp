@@ -1,19 +1,30 @@
+/**
+* @file
+* @author María López, 2022
+* @brief source de MyContactListener.hpp
+*/
+
 #include "MyContactListener.hpp"
 
 void MyContactListener::BeginContact(b2Contact* contact)
 {
-	b2BodyUserData userDataA = contact->GetFixtureA()->GetBody()->GetUserData();
-	b2BodyUserData userDataB = contact->GetFixtureA()->GetBody()->GetUserData();
-	
-	//Colisión del coche
-	if (userDataA.pointer == car->chasis->GetFixtureList()->GetBody()->GetUserData().pointer ||
-		userDataB.pointer == car->chasis->GetFixtureList()->GetBody()->GetUserData().pointer)
-	{
-		if (userDataA.pointer == sensorPlat->GetBase()->GetFixtureList()->GetBody()->GetUserData().pointer ||
-			userDataB.pointer == sensorPlat->GetBase()->GetFixtureList()->GetBody()->GetUserData().pointer)
-		{
-			car->Reset();
+	Tag* tagA = (Tag*)contact->GetFixtureA()->GetUserData().pointer;
+	Tag* tagB = (Tag*)contact->GetFixtureB()->GetUserData().pointer;
 
+	//Colisión del coche
+	if (tagA && tagB) 
+	{
+		if (tagA->TAG == "wheel" || tagB->TAG == "wheel")
+		{
+			if (tagA->TAG == "sensor")
+			{
+				// Haz cosas
+			}
+			else if (tagB->TAG == "sensor")
+			{
+				// Haz cosas
+			}
 		}
 	}
+	
 }

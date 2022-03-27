@@ -1,3 +1,9 @@
+/**
+* @file
+* @author María López, 2022
+* @brief header de la Escena. Tiene los elementos del juego y un Start y Update.
+*/
+
 #pragma once
 
 #include <vector>

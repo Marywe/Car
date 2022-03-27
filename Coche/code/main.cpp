@@ -1,5 +1,8 @@
-// María López
-// 2022
+/**
+* @file
+* @author María López, 2022
+* @brief main donde se crea la escena del juego, se crea su Start y el Update
+*/
 
 #include "Scene.hpp"
 

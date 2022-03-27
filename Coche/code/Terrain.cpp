@@ -1,3 +1,9 @@
+/**
+* @file
+* @author María López, 2022
+* @brief source de Terrain.hpp
+*/
+
 #include "Terrain.hpp"
 
 b2Body* Turret::CreateBase(b2World& physics_world, b2BodyType body_type, float x, float y, float width, float height)
@@ -49,8 +55,34 @@ void Platform::CreateFloor(b2World& physics_world, b2BodyType body_type, float x
 }
 void SensorPlat::CreateBase(b2World& physics_world, b2BodyType body_type, float x, float y, float width, float height)
 {
-    this->base = create_box(physics_world, body_type, x, y, width, height);
+    // Se crea el body:
 
+    b2BodyDef body_definition;
+
+    body_definition.type = body_type;
+    body_definition.position.Set(x, y);                            // Posición inicial absoluta
+   base = physics_world.CreateBody(&body_definition);
+
+    // Se añande una fixture:
+
+    b2PolygonShape body_shape;
+
+    body_shape.SetAsBox(width, height);
+
+    b2FixtureDef body_fixture;
+
+    body_fixture.shape = &body_shape;
+    body_fixture.density = 1.00f;
+    body_fixture.restitution = 0.50f;
+    body_fixture.friction = 1.50f;
+
+    Tag* tag = new Tag;
+    tag->TAG = "sensor";
+    body_fixture.userData.pointer = uintptr_t(tag);
+
+    base->CreateFixture(&body_fixture);
+
+   
 }
 
 void Platform::Move() {
@@ -72,7 +104,7 @@ void Terrain::CreateTerrain(b2World& physics_world)
 
 
     turret = new Turret();
-    turret->SetPos(b2Vec2(3, 2));
+    turret->SetPos(b2Vec2(9, 2));
     turret->circle = create_circle(physics_world, b2_dynamicBody, turret->GetPos().x, turret->GetPos().y + 0.65, 0.2f);
     turret->CreateBase(physics_world, b2_kinematicBody, turret->GetPos().x, turret->GetPos().y, .1f, .65f);
     turret->CreateV(physics_world, b2_dynamicBody, turret->GetPos().x, turret->GetPos().y, 0.1f, 0.6f);
@@ -81,15 +113,14 @@ void Terrain::CreateTerrain(b2World& physics_world)
     
 
     platform = new Platform();
-    platform->SetPos(b2Vec2(6, 1));
-    platform->CreateFloor(physics_world, b2_kinematicBody, platform->GetPos().x, platform->GetPos().y + 0.5f, 1, 0.05f);
-    platform->CreateBase(physics_world, b2_kinematicBody, platform->GetPos().x, platform->GetPos().y, .05f, .5f);
+    platform->SetPos(b2Vec2(6, -0.5f));
+    platform->CreateFloor(physics_world, b2_kinematicBody, platform->GetPos().x, platform->GetPos().y + 0.5f, 1, 0.1f);
+    platform->CreateBase(physics_world, b2_kinematicBody, platform->GetPos().x, platform->GetPos().y, .1f, .5f);
 
 
     sensorPlat = new SensorPlat();
-    sensorPlat->SetPos(b2Vec2(8,1));
-    sensorPlat->CreateBase(physics_world, b2_kinematicBody, sensorPlat->GetPos().x, sensorPlat->GetPos().y, 2, .5f);
-    sensorPlat->GetBase()->GetFixtureList()->GetBody()->GetUserData().pointer = 3;
+    sensorPlat->SetPos(b2Vec2(9,0));
+    sensorPlat->CreateBase(physics_world, b2_kinematicBody, sensorPlat->GetPos().x, sensorPlat->GetPos().y, 1.3f, .1f);
 }
 
 void Terrain::Update() 
@@ -103,11 +134,13 @@ void Terrain::Update()
     if (!platform->GetDown())
     {
         platform->Move();
+
+        turret->joint->SetMotorSpeed(600);
+        turret->joint->SetMaxMotorTorque(100);
     }
 
 
-    turret->joint->SetMotorSpeed(600);
-    turret->joint->SetMaxMotorTorque(100);
+    
 
 
 }

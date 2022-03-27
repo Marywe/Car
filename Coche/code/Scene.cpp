@@ -1,3 +1,9 @@
+/**
+* @file
+* @author María López, 2022
+* @brief source de Scene.hpp
+*/
+
 #include "Scene.hpp"
 
 void Scene::Start()
@@ -46,7 +52,7 @@ void Scene::Update()
     do
     {
 
-        //terrain->Update();
+        terrain->Update();
 
         timer.restart();
 

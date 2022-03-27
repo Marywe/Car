@@ -1,11 +1,16 @@
+/**
+* @file
+* @author María López, 2022
+* @brief header del Car o Player. Tiene las funciones y atributos para guardar y crear sus partes además de para moverlo
+*/
+
 #pragma once
 
 #include <box2d/box2d.h>
 #include "Utils.hpp"
 
 
-//! Clase del player, que en nuestro juego será un coche que podrá controlar de dos formas: moviéndolo de forma Horizontal (A - D) y frenando
-//! con el espacio o no moviéndote.
+//! Clase del player, que en nuestro juego será un coche que podrá controlar de dos formas: moviéndolo de forma Horizontal (A - D) y frenando con el espacio o no moviéndote.
 class Car 
 {
 private:

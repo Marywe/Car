@@ -1,3 +1,9 @@
+/**
+* @file
+* @author María López, 2022
+* @brief source de Car.hpp
+*/
+
 #include "Car.hpp"
 
 Car::Car(b2Vec2 _pos)
@@ -42,6 +48,10 @@ b2Body* Car::CreateWheel(b2World& physics_world, b2BodyType body_type, float x, 
     body_fixture.density = 0.10f;
     body_fixture.restitution = 0.75f;
     body_fixture.friction = 0.50f;
+
+    Tag* tag = new Tag;
+    tag->TAG = "wheel";
+    body_fixture.userData.pointer = uintptr_t(tag);
 
     body->CreateFixture(&body_fixture);
 
